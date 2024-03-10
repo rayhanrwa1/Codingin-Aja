@@ -6,7 +6,7 @@ import HeaderTwo from "@/src/layout/headers/header_3_user";
 import TeamArea from "./team-area";
 import firebase from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { app } from "../../../firebaseConfig";
+import { app } from "@/firebaseConfig";
 
 const auth = getAuth(app);
 

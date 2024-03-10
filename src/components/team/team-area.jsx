@@ -8,12 +8,12 @@ const TeamArea = () => {
             <div className="tp-team-area pt-115 pb-80">
                 <div className="container">
                     <div className="row">
-                        {team_data.map((item, i) => 
+                        {team_data.map((item, i) => (
                             <div key={i} className="col-xl-3 col-lg-4 col-md-6">
                                 <div className="tp-team-item mb-30">
                                     <div className="tp-team-img p-relative">
                                         <div className="fix">
-                                            <a href="#"><img src={item.img} alt={item.membar_name} /></a>
+                                            <a href="#"><img src={item.img} alt={item.member_name} /></a>
                                         </div>
                                         <div className="tp-team-overlay">
                                             <div className="team-overlay-icon">
@@ -28,13 +28,13 @@ const TeamArea = () => {
                                     </div>
                                     <div className="tp-team-designation text-center pt-35">
                                     <h5 className="client-name">
-                                            <Link href={item.link}>{item.membar_name}</Link>
+                                            <Link href={item.link}>{item.member_name}</Link>
                                         </h5>
                                         <span className="client-position">{item.job_title}</span>
                                     </div>
                                 </div>
                             </div>                        
-                        )} 
+                            ))} 
                     </div>
                 </div>
             </div>            
