@@ -80,8 +80,7 @@ const CommentForm = ({ addComment }) => {
               id="e-agree"
             />
             <label className="e-check-label" htmlFor="e-agree">
-              Save my name, email, and website in this browser for the next
-              time I comment.
+             {/* Deskripsi */}
             </label>
           </div>
         </div>
