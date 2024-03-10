@@ -1,0 +1,303 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  08. PRICE CSS START HERE
+/*----------------------------------------*/
+
+.pricing-area{
+    padding-top: 225px;
+    margin-top: -125px;
+}
+.tp-price-head {
+    background: #171717;
+    padding: 50px;
+    @media #{$lg} {
+        padding: 40px 30px;
+    }
+    @media #{$md} {
+        padding: 40px 30px;
+    }
+    @media #{$xs} {
+        padding: 40px 30px;
+    }
+    & .tp-price-content{
+        position: relative;
+        z-index: 9;
+        & h6 {
+            color: #ffc000;
+            font-size: 16px;
+        }
+    
+        & p {
+            color: #b5b5b5;
+            margin: 0;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    
+        & .theme-color {
+            color: #2bbb94;
+        }
+    
+        & .theme-sec-color {
+            color: #ff6f6f;
+        }
+    }
+    & .tp-price-bg-text {
+        & span {
+            font-weight: bold;
+            font-size: 160px;
+            color: #212121;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 75px;
+
+        }
+    }
+}
+.tp-price-badge{
+    background-color: #2bbb94;
+    text-align: center;
+    color: var(--tp-common-white);
+    font-weight: 700;
+}
+
+.tp-price-value {
+    font-size: 60px;
+    color: #fff;
+    margin-bottom: 3px;
+    position: relative;
+    z-index: 5;
+
+    @media #{$xs} {
+        font-size: 35px;
+    }
+}
+
+.tp-price-feature {
+    background: #2E2E2E;
+    padding: 50px;
+    @media #{$lg} {
+        padding: 40px 30px;
+    }
+    @media #{$md} {
+        padding: 40px 30px;
+    }
+    @media #{$xs} {
+        padding: 40px 30px;
+    }
+
+    ul {
+        list-style: none;
+
+        & li {
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 500;
+            position: relative;
+            padding-left: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            & i {
+                position: absolute;
+                left: 0;
+                top: 6px;
+            }
+
+            &.price-fe-inactive {
+                color: #696969;
+            }
+        }
+    }
+}
+
+.tp-price-btn {
+    & a {
+        height: 60px;
+        line-height: 58px;
+    }
+}
+
+.active {
+    .tp-price-btn {
+        & a {
+            background-color: #2BBB94;
+        }
+    }
+}
+.active-2 {
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);
+    .tp-price-btn {
+        & a {
+            background-color: var(--tp-theme-1);
+        }
+    }
+}
+
+
+.tp-accordion{
+    
+    & .accordion-item{
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid rgba($color: #000, $alpha: .12);
+        &:first-of-type{
+            & .accordion-button{
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+        &:last-of-type{
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+
+            & .accordion-button{
+                &.collapsed{
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+    }
+
+    & .accordion-button {
+        padding: 30px 0;
+        padding-right: 15px;
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--tp-common-black);
+        background-color: transparent;
+
+        &::after{
+            position: absolute;
+            content: '\f107';
+            font-family: var(--tp-ff-fontawesome);
+            background-image: none;
+            top: 28%;
+            right: 0;
+            @include transform(rotate(180deg));
+            color: var(--tp-theme-1);
+            width: auto;
+            height: auto;
+            font-weight: 500;
+        }
+        &.collapsed{ 
+            &::after{
+                @include transform(rotate(0deg));
+                color:  var(--tp-common-black);
+            }
+        }
+        &:not(.collapsed){
+            color: var(--tp-theme-1);
+            background-color: transparent;
+            box-shadow: none
+        }
+        &:focus{
+            box-shadow: none;
+            border: 0;
+        }
+        &:hover{
+            color: var(--tp-theme-1);
+            &::after{
+                color: var(--tp-theme-1);
+            }
+        }
+    }
+
+    & .accordion-body{
+        padding: 0 0 25px;
+        & p{
+            font-size: 16px;
+            color: var(--tp-text-1);
+        }
+    }
+}
+.tp-porduct-item{
+    padding: 20px 20px;
+    border: 4px solid transparent;
+    background-color: var(--tp-common-white);
+    transition: 0.3s;
+    padding-bottom: 40px;
+    &:hover{
+        border: 4px solid #3c8599;
+    }
+}
+.tp-pro-rating {
+    & span{
+        color: #3c8599;
+    }
+}
+.tp-pro-price{
+    & span{
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--tp-common-black);
+    }
+}
+.tp-pro-title{
+    font-size: 16px;
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 10px;
+    &:hover{
+        color: var(--tp-theme-1);
+    }
+}
+.shop-cart{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    right: 0;    
+}
+.tp-porduct-item:hover .shop-cart{
+    opacity: 1;
+    visibility: visible;
+    top: 50%;
+}
+.tp-price-btn {
+	line-height: 0;
+}
+
+.tp-price-service{     
+    & .tp-price-head{
+        background-color: #f6f6f6;
+        & .tp-price-bg-text{
+            & span{
+                color: #eeeded;
+            }
+        }
+        & .tp-price-value{
+            color: var(--tp-common-black);
+        }
+        & .tp-price-content{
+            & h6{
+                color: var(--tp-theme-1);
+            }
+            & p{
+                color: #777777;
+            }
+        }
+    }
+    & .tp-price-feature{
+        background-color: transparent;
+        & li{
+            color: #777777;
+            & i{
+                color: var(--tp-theme-1);
+            }
+        }
+    }
+    & .tp-price-badge{
+        background-color: var(--tp-theme-1);
+    }
+}
+
+
+

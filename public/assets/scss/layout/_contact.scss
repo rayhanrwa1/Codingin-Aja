@@ -1,0 +1,164 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  19. CONTACT CSS START HERE
+/*----------------------------------------*/
+
+.contact-bg {
+    padding: 50px;
+    @media #{$xs}{
+       padding: 20px;
+    }
+}
+
+.contact-us {
+    padding-left: 80px;
+    padding-top: 25px;
+    padding-right: 30px;
+    @media #{$xl}{
+        padding-left: 50px ;
+    }
+    @media #{$lg}{
+        padding-left: 40px ;
+    }
+    @media #{$md}{
+        padding-left: 0px ;
+    }
+    @media #{$xs}{
+        padding-left: 0px ;
+        padding-right: 0;
+    }
+}
+.contact-map iframe {
+    @media #{$xs}{
+        height: 400px;
+       
+    }
+}
+
+.contact {
+    &__input {
+        position: relative;
+        margin-bottom: 15px;
+
+        & i {
+            font-size: 17px;
+            color: var(--tp-theme-1);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 23px;
+        }
+
+        & input {
+            padding: 25px 55px;
+            border: 0;
+            height: 60px;
+            background-color: rgb(255, 255, 255);
+            color: #999999;
+
+            &::placeholder {
+                color: #999999;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+        & textarea {
+            padding: 22px 55px;
+            border: 0;
+            background-color: rgb(255, 255, 255);
+            color: #999999;
+            outline: none;
+            resize: none;
+            height: 150px;
+
+            &::placeholder {
+                color: #999999;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+        & .pen {
+            position: absolute;
+            top: 36px;
+            left: 23px;
+        }
+    }
+}
+
+.contact-info-item {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        width: 1px;
+        background-color: #dcdcdc;
+        height: 150px;
+        content: "";
+        top: 0;
+        right: -15px;
+        bottom: 0;
+        margin: auto;
+        @media #{$xs}{
+            display: none;
+        }
+    }
+
+    & i {
+        height: 120px;
+        width: 120px;
+        background-color: var(--tp-theme-1);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 120px;
+        color: var(--tp-common-white);
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    & h5 {
+        font-weight: 700;
+        color: var(--tp-common-black);
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    & a {
+        color: #777777;
+        font-weight: 400;
+        font-size: 16px;
+        transition: .3s;
+        &:hover{
+            color: var(--tp-theme-1);
+        }
+    }
+}
+.contact-map{
+    & iframe{
+        height: 570px;
+        width: 100%;
+    }
+}
+
+.contact-last-child {
+    & .col-xl-3:last-child {
+        & .contact-info-item {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+.contact-last-child {
+    & .col-xl-3:nth-child(2) {
+        & .contact-info-item {
+            &::after {
+                @media #{$md}{
+                    display: none;
+                }
+            }
+        }
+    }
+}

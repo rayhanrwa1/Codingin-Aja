@@ -1,0 +1,281 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  21. FOOTER CSS START HERE
+/*----------------------------------------*/
+.footer-widget-2 {
+	& .footer-widget-title {
+		color: black;
+	}
+
+	& .footer-link {
+		color: #3c8599;
+		border-bottom: 1px solid#3c8599;
+		font-weight: 700;
+
+		& i {
+			padding-left: 15px;
+		}
+	}
+
+}
+
+
+.footer-widget-title {
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.footer-widget p {
+	color: #aeaeae;
+}
+
+.footer-widget ul {
+	overflow: hidden;
+
+	& li {
+		margin-bottom: 8px;
+		color: #aeaeae;
+		list-style: none;
+		width: 50%;
+		float: left;
+		transition: .3s;
+		:hover {
+			color: var(--tp-theme-1);
+		}
+	}
+}
+
+.footer-widget ul li::before {
+	content: "\f105";
+	font-family: var(--tp-ff-fontawesome);
+	margin-right: 8px;
+	display: inline-block;
+	transform: translateY(1px);
+}
+
+.footer-widget ul li:hover::before {
+	color: var(--tp-theme-1);
+	margin-right: 5px;
+}
+
+.footer-col-2 {
+	padding-left: 55px;
+
+	@media #{$lg,$md,$xs} {
+		padding-left: 0px;
+	}
+}
+
+.footer-col-3 {
+	padding-left: 10px;
+
+	@media #{$lg,$md,$xs} {
+		padding-left: 0px;
+	}
+}
+
+.footer-col-4 {
+	padding-left: 20px;
+
+	@media #{$lg,$md,$xs} {
+		padding-left: 0px;
+	}
+}
+
+.footer-subscribe {
+	position: relative;
+}
+
+.footer-subscribe input {
+	width: 100%;
+	height: 50px;
+	padding: 0 20px;
+	padding-right: 20px;
+	background: #1a1a1a;
+	border: 0;
+	color: #ddd;
+	padding-right: 70px;
+}
+
+.footer-widget-2 {
+	& .footer-subscribe {
+		& input {
+			background-color: #efefef;
+			color: var(--tp-theme-1  );
+			&::placeholder{
+				color:var(--tp-theme-1) ;
+			}
+		}
+	}
+}
+
+.footer-subscribe button {
+	position: absolute;
+	background: #111F2C;
+	width: 60px;
+	height: 100%;
+	color: #fff;
+	right: 0;
+	top: 0;
+}
+
+.footer-subscribe input::-moz-placeholder {
+	color: #737373;
+	font-size: 14px;
+	opacity: 1;
+}
+
+.footer-subscribe input::placeholder {
+	color: #737373;
+	font-size: 14px;
+	opacity: 1;
+}
+
+.footer-social {
+	& a {
+		margin-right: 20px;
+		font-size: 14px;
+		height: 30px;
+		width: 30px;
+		display: inline-block;
+		text-align: center;
+		line-height: 30px;
+		border-radius: 50%;
+		background-color: transparent;
+		transition: .3s;
+
+		@media #{$xl} {
+			margin-right: 14px;
+		}
+
+		&:hover {
+			background-color: var(--tp-theme-1);
+			color: var(--tp-common-white);
+		}
+
+		@media #{$lg} {
+			margin-right: 8px;
+		}
+	}
+}
+
+.copyright-text p {
+	color: #fff;
+	margin: 0;
+
+	@media #{$md} {
+		margin-bottom: 5px;
+	}
+
+	@media #{$xs} {
+		margin-bottom: 5px;
+	}
+}
+
+.footer-menu ul li {
+	display: inline-block;
+	color: #fff;
+	margin-left: 40px;
+
+	@media #{$md} {
+		margin-left: 0;
+		margin-right: 20px;
+	}
+
+	@media #{$xs} {
+		margin-left: 0;
+		margin-right: 20px;
+	}
+}
+
+.theme-white {
+	padding: 25px 40px;
+	box-shadow: -16px 0px 32px 0px rgba(0, 0, 0, 0.04);
+	padding-bottom: 10px;
+	@media #{$md} {
+		padding-left: 0;
+	}
+	@media #{$xs} {
+		padding: 10px;
+		padding-top: 20px;
+	}
+}
+
+.tp-footer-logo {
+	@media #{$xs} {
+		margin-bottom: 15px;
+	}
+}
+
+.tp-footer-social {
+	& a {
+		color: #222;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		line-height: 50px;
+		background-color: #f1f1f1;
+		display: inline-block;
+		text-align: center;
+		margin-right: 10px;
+		transition: .3s;
+		margin-bottom: 15px;
+		@media #{$xs} {
+			margin-right: 2px;
+		}
+	}
+
+	:hover {
+		background-color: var(--tp-theme-1);
+		color: #fff;
+	}
+}
+
+.tp-footer-btn {
+	background-color: var(--tp-theme-1);
+	display: inline-block;
+	height: 100%;
+	position: absolute;
+	padding: 0 25px;
+	top: 0;
+	right: 0;
+
+	& .tp-f-text {
+		font-size: 12px;
+		font-weight: 700;
+		color: var(--tp-common-white);
+		line-height: 1;
+	}
+
+	& .tp-f-icon {
+		color: var(--tp-common-white);
+		padding-top: 20px;
+		line-height: 1;
+		font-size: 45px;
+	}
+}
+
+.footer-widget-area-2 {
+	margin-top: -50px;
+}
+
+.footer-area-white {
+	& .footer-widget {
+		& p {
+			color: #777;
+		}
+
+		& ul {
+			& li {
+				margin-bottom: 8px;
+				color: #777;
+				list-style: none;
+				width: 50%;
+				float: left;
+				transition: 0.3s;
+			}
+		}
+	}
+}

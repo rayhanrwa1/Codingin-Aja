@@ -1,0 +1,109 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  05. FACT CSS START HERE
+/*----------------------------------------*/
+
+.tp-fact {
+	display: flex;
+	align-items: flex-end;
+    position: relative;
+}
+.fact-content {
+	padding-left: 20px;
+	position: relative;
+	z-index: 2;
+}
+.fact-number {
+	display: inline-block;
+	text-align: center;
+	width: 130px;
+}
+.fact-number h2 span{
+	font-size: 70px;
+	color: transparent;
+	-webkit-text-stroke: 1px #97bbc5;
+	line-height: 1;
+	margin: 0;
+}
+.fact-number .per {
+	background: #fff;
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	text-align: center;
+	font-weight: 700;
+	color: #212121;
+	font-size: 20px;
+	border-radius: 50%;
+	line-height: 38px;
+	transform: translateY(-26px);
+}
+.fact-content h4 {
+    color: #fff;
+    font-size: 20px;
+	@media #{$xl} {
+		font-size: 15px;
+	}
+  }
+  .fact-content p {
+	color: #fff;
+	font-size: 14px;
+	margin: 0;
+	@media #{$xl} {
+		font-size: 13px;
+	}
+}
+
+.counter-row {
+	counter-reset: count;
+}
+.num__count {
+	position: absolute;
+	right: 0;
+	z-index: 1;
+	top: 32px
+}
+.num__count::before {
+	text-align: center;
+	color: #448ca0;
+	font-size: 100px;
+	border-radius: 50%;
+	font-weight: 700;
+	counter-increment: count;
+	content: "0" counter(count);
+	transition: all 500ms ease;
+	display: inline-block;
+}
+
+.footer-counter-content{
+	& h2{
+		color: var(--tp-common-white);
+		font-size: 50px;
+		font-weight: 700;
+		color: transparent;
+		-webkit-text-stroke: 1px #fff;
+		padding-right: 15px;
+		margin: 0;
+	}
+	& i{
+		font-size: 30px;
+	}
+}
+
+.counter-text{
+	& h3{
+		color: var(--tp-common-white);
+		font-size: 16px;
+		font-weight: var(--tp-fw-bold);
+		line-height: 1.2;
+		margin: 0;
+	}
+}
+.tp-counter-logo {
+	@media #{$lg} {
+		margin-bottom: 20px;
+	}
+	@media #{$xs} {
+		margin-bottom: 15px;
+	}
+}

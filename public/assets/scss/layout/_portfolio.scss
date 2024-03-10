@@ -1,0 +1,217 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  16. PORTFOLIO CSS START HERE
+/*----------------------------------------*/
+
+
+.tp-port-button{
+    & button{
+        margin: 0px 20px;
+        border-bottom: 2px solid transparent;
+        font-weight: var(--tp-fw-bold);
+        color: #b3b3b3;
+        transition: .3s;
+        @media #{$xs,$sm}{
+            margin: 0px 11px;
+        }
+        &.active{
+            color: var(--tp-theme-1);
+            border-bottom: 2px solid #3c8599;;
+        }
+    }
+}
+
+.tp-port-item{
+    position: relative;
+    &:before{
+        position: absolute;
+        content: "";
+        background: #000;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: .3s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1;
+    }
+    &:hover{
+        & .tp-case-img{
+            transition: .3s;
+            & img{
+                transform: scale(1.1)rotate(-2deg);
+            }
+        }
+    }
+    & .tp-port-content{
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        padding: 0 40px;
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s;
+        z-index: 2;
+    }
+    &:hover{
+        & .tp-port-content{
+            top: 40px;
+            opacity: 1;
+            visibility: visible;
+        }
+        & .tp-port-icon{
+            bottom: 40px;
+            opacity: 1;
+            visibility: visible;
+        }
+        &:before{
+            opacity: .6;
+            visibility: visible;
+        }
+    }
+}
+.tp-port-icon{
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    transition: .1s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    & button{
+        height: 50px;
+        width: 50px;
+        background-color: var(--tp-common-white);
+        border-radius: 50%;
+        line-height: 50px;
+        text-align: center;
+        display: inline-block;
+    }
+}
+.tp-port-icon button:hover {
+	background: var(--tp-theme-1);
+	color: var(--tp-common-white);
+}
+
+.port-subtitle{
+    font-size: 14px;
+    font-weight: var(--tp-fw-regular);
+    color: var(--tp-common-white);
+}
+.port-title{
+    font-weight: var(--tp-fw-bold);
+    font-size: 20px;
+    color: var(--tp-common-white);
+}
+.client-overview{
+    & .col-xl-3:last-child {
+        & .client-overview-item{
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+.client-overview-item{
+    position: relative;
+    padding:15px 0px;
+    &::after{
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: 0;
+        width: 2px;
+        background-color: #589caf;
+        height: 40px;
+        right: -15px;
+    }
+    & span{
+        color: var(--tp-common-white);
+        font-weight: 400;
+        font-size: 16px;
+    }
+    & h5{
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--tp-common-white);
+    }
+}
+.tp-widget-category{
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    & ul{
+        & li{
+            list-style-type: none; 
+            border-bottom: 1px solid #eeee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            &:last-child{
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: 0;
+            }         
+            & a{
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--tp-common-black);
+                & span{
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: var(--tp-theme-1);
+                }
+            }
+        }
+    }
+}
+.overveiw-testimonial{
+    background-color: #f7f7f7;
+    padding: 50px 100px;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 45px;
+    @media #{$xs}{
+        padding: 30px;
+    }
+    @media #{$md}{
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    & .portfolio-details-content{
+        position: relative;
+        z-index: 2;
+        & img{
+            margin-bottom: 20px;
+        }
+        & p{
+            font-size: 28px;
+            color: var(--tp-common-black);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+        & h5{
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--tp-common-black);
+        }
+        & h6{
+            color: #777777;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+    & .testi-overview-icon{
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        z-index:1;
+        & i{
+            font-size: 190px;
+            color: var(--tp-common-white);
+        }
+    }
+}

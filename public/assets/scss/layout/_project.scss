@@ -1,0 +1,128 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  07. PROJECT CSS START HERE
+/*----------------------------------------*/
+
+.project-item img {
+	width: 100%;
+}
+.slider-space-60{
+    .slick-slide > div {
+        padding: 0 20px;
+    }
+}
+.project-item{
+    position: relative;
+    & button {
+        position: absolute;
+        top: 110px;
+        left: 110px;
+        background: #fff;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 5;
+        &:hover{
+            & i{
+                color: var(--tp-theme-1);
+            }
+        }
+    }
+}
+
+.project-item.slick-center {
+        & button{
+            opacity: 1;
+            visibility: visible;
+        }
+}
+.tp-project-active .slick-dots {
+	text-align: center;
+    padding-top: 35px;
+}
+.tp-project-active .slick-dots li {
+	display: inline-block;
+    margin: 0 5px;
+}
+.tp-project-active .slick-dots li button {
+	text-indent: -10000px;
+	height: 5px;
+	width: 20px;
+	background: #383838;
+    border-radius: 30px;
+    transition: .3s;
+}
+.tp-project-active .slick-dots li.slick-active button{
+    background-color: var(--tp-common-white);
+    width: 25px;
+}
+
+
+
+.tp-process{
+    &__item{
+        background-color:var(--tp-common-white);
+        padding: 50px 35px;
+    }
+    &__subtitle{
+        font-size: 120px;
+        font-weight: bold;
+        color: transparent;
+        -webkit-text-stroke: 1px #212121;
+    }
+    &__title{
+        color:var(--tp-common-black);
+        font-size: 24px;
+        font-weight: var(--tp-fw-bold);
+
+    }
+    & p{
+        color: #777777;
+        font-size: 14px;
+
+    }
+}
+.tp-project-icon{
+    & a{
+        height: 100px;
+        width: 100px;
+        background-color: var(--tp-theme-1);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 100px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: -30px;
+        transition: .3s; 
+    }
+   
+    &::before{
+        content: '';
+        height: 95px;
+        width: 95px;
+        background-color: #f8f8f8;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 95px;
+        display: inline-block;
+        position: absolute;
+        top: 13px;
+        right: -18px;
+        transition: .3s; 
+    }
+    &:hover{
+        &::before{
+            background-color: var(--tp-theme-1);
+        }
+    }
+    &:hover{
+       & a{
+        background-color: black;
+        color: var(--tp-theme-1);
+       }
+    }
+}

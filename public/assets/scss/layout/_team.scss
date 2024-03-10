@@ -1,0 +1,423 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  17. TEAM CSS START HERE
+/*----------------------------------------*/
+
+.client-name {
+    font-size: 24px;
+    font-weight: var(--tp-fw-bold);
+    color: var(--tp-common-black);
+    margin: 0;
+}
+
+.client-name:hover {
+    color: var(--tp-theme-1);
+}
+
+.client-position {
+    font-size: 14px;
+    font-weight: var(--tp-fw-bold);
+    color: var(--tp-theme-1);
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.tp-team-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111f2c98;
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+.tp-team-item:hover .tp-team-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+.tp-team-item:hover .tp-team-img{
+    & img{
+        transform: scale(1.1);
+    }
+}
+.team-overlay-icon {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    & a {
+        height: 50px;
+        width: 50px;
+        background-color: var(--tp-common-white);
+        display: inline-block;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        transition: .4s;
+    }
+
+    .team-icon-bottom {
+        display: flex;
+        top: 60px;
+        left: 0px;
+        flex-direction: column;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: .4s;
+
+        & a {
+            height: 50px;
+            width: 50px;
+            border: 2px solid #5695a4;
+            background-color: transparent;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+    }
+
+    .team-icon-right {
+        position: absolute;
+        transition: .3s;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        top: 0px;
+        left: 60px;
+
+        & a {
+            height: 50px;
+            width: 50px;
+            border: 2px solid #5290a2;
+            background-color: transparent;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: #fff;
+        }
+    }
+}
+
+.team-overlay-icon:hover .team-icon-bottom {
+    opacity: 1;
+    visibility: visible;
+}
+
+.team-overlay-icon:hover .team-icon-right {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tp-team-space {
+    & .slick-track {
+        margin: 0 -15px;
+
+        @media #{$xs,$sm} {
+            margin: 0;
+        }
+    }
+
+    & .slick-slide {
+        padding: 0 15px;
+
+        @media #{$xs,$sm} {
+            padding: 0;
+        }
+    }
+}
+
+.team-overlay-icon .team-icon-bottom a:hover {
+    background: #fff;
+    color: var(--tp-theme-1);
+    border: 2px solid #fff;
+}
+
+.team-overlay-icon a:hover {
+    color: var(--tp-theme-1);
+}
+
+
+.team-slider-active button {
+    height: 60px;
+    width: 60px;
+    background: var(--tp-common-white);
+    border-radius: 50%;
+    position: absolute;
+    top: -150px;
+    right: 45px;
+    color: #222;
+
+    &:hover {
+        color: var(--tp-common-white);
+        background-color: var(--tp-theme-1);
+    }
+
+}
+
+.team-slider-active .slick-prev.slick-arrow {
+    right: 123px;
+}
+
+.tp-team-img img {
+    @media #{$md,$xs} {
+        width: 100%;
+    }
+}
+
+.select-main {
+    background-color: #fff;
+    padding: 55px;
+    padding-bottom: 0;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 9;
+
+    @media #{$xs} {
+        padding: 0;
+    }
+}
+
+.select-text span {
+    font-weight: bold;
+    color: #222;
+    font-size: 18px;
+}
+
+.select-icon-main {
+    padding: 20px;
+    background-color: var(--tp-theme-1);
+    position: relative;
+    z-index: 2;
+    padding-bottom: 0;
+}
+
+.select-item {
+    & .form-select:focus {
+        box-shadow: none;
+    }
+
+    & .nice-select {
+        -webkit-tap-highlight-color: transparent;
+        background-color: #fff;
+        border-radius: 5px;
+        border: solid 1px #e8e8e8;
+        clear: both;
+        cursor: pointer;
+        display: block;
+        float: left;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: normal;
+        height: 60px;
+        line-height: 45px;
+        outline: 0;
+        padding-left: 18px;
+        padding-right: 30px;
+        position: relative;
+        text-align: left !important;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        white-space: nowrap;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    & .nice-select .option {
+        cursor: pointer;
+        font-weight: 400;
+        line-height: 40px;
+        list-style: none;
+        min-height: 40px;
+        outline: none;
+        padding-left: 18px;
+        padding-right: 29px;
+        text-align: left;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+        width: 100%;
+    }
+    .nice-select .list {
+        width: 100%;
+    }
+}
+
+.select-item .nice-select {
+    @media #{$xl} {
+        width: 310px;
+    }
+
+    @media #{$lg} {
+        width: 260px;
+    }
+
+    @media #{$xs} {
+        width: 100%;
+    }
+
+}
+
+.select-text-size .tp-header-icon-info a {
+    @media #{$lg} {
+        font-size: 15px;
+    }
+}
+
+.progress-count {
+    position: absolute;
+    right: 13px;
+    top: 1px;
+    color: #222;
+    font-weight: 700;
+}
+
+.tp-progres-img {
+    position: relative;
+    z-index: 2;
+}
+.team-info-main{
+    @media #{$lg,$md,$xs} {
+        padding-left: 0;
+    }
+}
+.team__skill-progress-item h4 {
+	padding-right: 35px;
+}
+.team-details-progressbar {
+    @media #{$lg,$md,$xs} {
+        padding-bottom: 100px;
+        padding-right: 0;
+    }
+}
+.tp-progress-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    width: 32%;
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--tp-theme-1);
+        content: '';
+        opacity: .94;
+    }
+}
+.tp-progress-overlay{
+    & img{
+        height: 100%;
+    }
+}
+
+.tp-progress {
+    & .tp-about-wrapper-2 {
+        padding-right: 35px;
+    }
+}
+.team-member {
+   & img {
+       @media #{$lg,$md}{
+        width: 100%;
+       }
+    }
+}
+.progress {
+    border-radius: 0;
+    height: 10px;
+
+    & .progress-bar {
+        background-color: var(--tp-theme-1);
+    }
+}
+.team-member-info {
+	padding-left: 51px;
+    @media #{$lg} {
+        padding-top: 0;
+        padding-left: 10px;
+    }
+    @media #{$md,$xs} {
+        padding-left: 0px;
+    }
+}
+.tp-team-details-icon{
+    margin-bottom: 25px;
+    &:hover{
+        & .icon-area{
+            & a{
+                background-color: var(--tp-theme-1);
+                color: var(--tp-common-white);
+            }
+        }
+    }
+}
+
+.icon-area {
+    & a {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #f7f7f7;
+        line-height: 50px;
+        text-align: center;
+        display: inline-block;
+        color: var(--tp-theme-1);
+        transition: .3s;
+
+        & i {
+            font-size: 18px;
+        }
+    }
+}
+
+.team-contact-info {
+    & label {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: #777777;
+    }
+
+    & a {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--tp-common-black);
+        &:hover{
+            color: var(--tp-theme-1);
+        }
+    }
+}
+.team-details-info{
+    & h5{
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--tp-common-black);
+        margin-bottom: 25px;
+    }
+    & p{
+        font-size: 18px;
+        color: #777777;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+}
+.certifi-img{
+    padding-right: 20px;
+    margin-bottom: 15px;
+}

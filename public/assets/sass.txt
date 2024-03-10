@@ -1,0 +1,4 @@
+sass --watch "D:\Dropbox\Farhan Firoz\sectox\assets\scss\main.scss":"D:\Dropbox\Farhan Firoz\sectox\assets\css\style.css"
+
+
+sass --watch "C:\Users\hp\Dropbox\Farhan Firoz\sectox\assets\scss\main.scss":"C:\Users\hp\Dropbox\Farhan Firoz\sectox\assets\css\style.css"

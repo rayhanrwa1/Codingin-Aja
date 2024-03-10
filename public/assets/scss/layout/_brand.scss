@@ -1,0 +1,76 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  12. BRAND CSS START HERE
+/*----------------------------------------*/
+
+
+.tp-brand-big-text{
+    & h3{
+        position: absolute;
+        font-size: 160px;
+        font-weight: 700;
+        -webkit-text-stroke: 1px #2d2d2d;
+        color: transparent;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        @media #{$md} {
+            font-size: 120px;
+        }
+    }
+}
+
+.brand-power{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.slick-slide img {
+	display: inline-block;
+}
+.tp-brand-big-text{
+    @media #{$xs} {
+        display: none;
+    }
+}
+.tp-brand-item .slick-slide img {
+    @media #{$xs} {
+        display: inline-block;
+    }
+}
+.tp-brand-item {
+    @media #{$xs} {
+        text-align: center;
+    }
+}
+
+
+.brand-strok {
+    & .tp-brand-big-text{
+        & h3{
+            -webkit-text-stroke: 1px #458ca0;  
+        }
+    }
+
+}
+.brand-strok {
+    & .tp-brand-big-text2 {
+        & h3{
+            -webkit-text-stroke: 1px #4d93a6;  
+        }
+    }
+
+}
+
+.Layer_4 {
+    // background-image: url("Layer 4.png");
+    position: absolute;
+    left: 0px;
+    top: 7102px;
+    width: 960px;
+    height: 594px;
+    z-index: 103;
+  }
+  

@@ -1,0 +1,183 @@
+@use '../utils' as *;
+
+
+/*----------------------------------------*/
+/*  10. TESTIMONIAL CSS START HERE
+/*----------------------------------------*/
+.tp-testimonial {
+    background: #fff;
+    padding: 50px 40px;
+    position: relative;
+    @media #{$lg}{
+        padding: 50px 30px;
+    }
+    & h4 {
+        font-size: 24px;
+        margin-bottom: 25px;
+        @media #{$lg}{
+            font-size: 18px;
+        }
+        @media #{$md}{
+            font-size: 20px;
+        }
+        @media #{$xs}{
+            font-size: 20px;
+        }
+      }
+  }
+  .testimonial-img {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 14px;
+    z-index: 2;
+    & i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #3c8599;
+        color: #fff;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        line-height: 25px;
+        font-size: 13px;
+        border-radius: 30px;
+        right: -15px;
+      }
+  }
+.reviewer-name {
+	font-size: 24px;
+	margin-bottom: 3px;
+}
+.reviewer-position {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+.quote-icon {
+	position: absolute;
+	bottom: 42px;
+	left: 0;
+	right: 0;
+	z-index: 1;
+    & img{
+        display: inline-block;
+    }
+}
+.testimonial-meta{
+    position: relative;
+    z-index: 2;
+}
+.tp-testimonial-big{
+    -webkit-text-stroke: 1px #ededed;
+    @media #{$xs}{
+        display: none;
+    }
+}
+
+.feature-height{
+    min-height: 790px;
+}
+.tp-testimonial-item{
+    padding: 50px 40px;
+    padding-top: 50px;
+    border: 1px solid #ebebeb;
+    padding-top: 78px;
+    position: relative;
+    @media #{$lg} {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @media #{$xs} {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.testi-img{
+    margin-bottom: 40px;
+    position: absolute;
+    top: -42px;
+    left: 0;
+    right: 0;
+}
+.testi-text {
+	font-size: 24px;
+	color: var(--tp-common-black);
+	font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    @media #{$lg} {
+        font-size: 17px;
+    }
+    @media #{$md} {
+        font-size: 17px;
+    }
+    @media #{$xs} {
+        font-size: 17px;
+    }
+}
+.quote-style {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	background-color: var(--tp-theme-1);
+	color: var(--tp-common-white);
+	border-radius: 50%;
+	line-height: 50px;
+	text-align: center;
+	margin-left: -17px;
+	border: 2px solid #fff;
+    margin-bottom: 50px;
+}
+.tp-testimonial-white {
+    & .slick-list {
+        padding-top: 40px;
+    }
+}
+.testi-meta{
+    & .reviewer-name{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    & .reviewer-position{
+        font-size: 14px;
+        font-weight: 400;
+        color: #777777;
+    }
+}
+.tp-testimonial-white .slick-next.slick-arrow {
+	margin-right: 76px;
+}
+.tp-testimonial-white button {
+	height: 60px;
+	width: 60px;
+	background: var(--tp-theme-1);
+	border-radius: 50%;
+	position: absolute;
+	top: -120px;
+	right: 0px;
+    color: var(--tp-common-white);
+    border: 1px solid #3c8599;
+}
+.tp-testimonial-white button:hover{
+    background-color: var(--tp-common-white);
+    color: var(--tp-common-black);
+    border: 1px solid #ebebeb;
+}
+.tp-test-arrow button {
+	height: 60px;
+	width: 60px;
+	background: var(--tp-theme-1);
+	border-radius: 50%;
+	color: #fff;
+    border: 1px solid #3c8599;
+}
+.tp-test-arrow button:hover{
+    background-color: #fff;
+    color: #222;
+    border: 1px solid #ddd;
+}
+.tp-test-arrow .slick-prev {
+	margin-right: 20px;
+}
+

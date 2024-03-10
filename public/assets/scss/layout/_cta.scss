@@ -1,0 +1,188 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  11. CTA CSS START HERE
+/*----------------------------------------*/
+
+.tp-cta-space {
+  padding-top: 230px;
+  padding-bottom: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-size: cover;
+  position: relative;
+
+  @media #{$xl} {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media #{$xs} {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 100px;
+  }
+
+  &::after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    content: '';
+  }
+
+  & .tp-cta-text-wapper {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.tp-cta span {
+  color: #a5a5a5;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: block;
+}
+.cta-link{
+  @media #{$xs} {
+    padding-top: 50px;
+  }
+}
+.cta-title {
+  font-size: 40px;
+  color: #fff;
+
+  @media #{$xs} {
+    font-size: 30px;
+  }
+  @media #{$xxl} {
+    font-size: 39px;
+  }
+  @media #{$xl} {
+    font-size: 34px;
+  }
+
+  & br {
+    @media #{$xxl,$xl} {
+      display: none;
+    }
+
+    @media #{$xs} {
+      display: none;
+    }
+  }
+}
+
+.cta-link {
+  & a {
+    border: 2px solid #47474a;
+    height: 60px;
+    width: 60px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 60px;
+    transition: .3s;
+
+    &:hover {
+      background-color: var(--tp-theme-1);
+      border-color: var(--tp-theme-1);
+    }
+  }
+}
+
+.cta-bg {
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.cta-map-section {
+  & .tp-section-subtitle {
+    color: #fff;
+  }
+
+  & .tp-section-title {
+    color: #fff;
+  }
+}
+
+.cta-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+
+  @media #{$lg,$md,$xs} {
+    position: static;
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.cta-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.tp-contact-wapper {
+  @media #{$xs} {
+    flex-wrap: wrap;
+  }
+}
+.tp-cta-box{
+  margin-right: 50px;
+  @media #{$xl} {
+    margin-right: 44px;
+  }
+  @media #{$xs} {
+    margin-bottom: 30px;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+  &:hover{
+    & .tp-cta-icon{
+     & a{
+      background-color: var(--tp-common-white);
+      color: var(--tp-theme-1);
+     }
+    }
+  }
+}
+
+.tp-cta-icon{
+  margin-right: 15px;
+  & a{
+    height: 60px;
+    width: 60px;
+    background-color: var(--tp-theme-1);
+    border-radius: 50%;
+    line-height: 60px;
+    color: var(--tp-common-white); 
+    display: inline-block; 
+    text-align: center;
+    font-size: 22px;
+    transition: .3s;
+  }
+}
+.tp-cta-content{
+  & label{
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  & a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+}
+.tp-cta-main{
+  @media #{$xs} {
+    flex-wrap: wrap;
+  };
+}

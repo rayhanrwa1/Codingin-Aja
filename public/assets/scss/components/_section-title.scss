@@ -1,0 +1,161 @@
+@use '../utils' as *;
+
+.tp-big-text {
+	font-size: 160px;
+	color: transparent;
+	-webkit-text-stroke: 1px #f4f4f4;
+	position: absolute;
+	top: -70px;
+	left: -40px;
+	z-index: -1;
+
+	@media #{$xs} {
+		font-size: 50px;
+		top: -49px;
+		left: -10px;
+	}
+}
+
+.text-center {
+	& .tp-big-text {
+		z-index: -1;
+		right: 0;
+	}
+}
+
+.tp-section-subtitle {
+	background: #111F2C;
+	color: #fff;
+	font-weight: 700;
+	padding: 3px 10px;
+	text-transform: uppercase;
+}
+.tp-section-box-2{
+	& .tp-section-subtitle{
+		color: #3c8599;
+		font-weight: 700;
+		text-transform: uppercase;
+		background: 0;
+		padding: 0;
+	}
+}
+.cta-map-section{
+	& .tp-section-subtitle{
+		color: #fff;
+		font-weight: 700;
+		text-transform: uppercase;
+		background: 0;
+		padding: 0;
+	}
+}
+.white-text{
+	& .tp-section-subtitle{
+		color: #fff;
+	}
+	& .tp-section-title{
+		color: #fff;
+		@media #{$xs} {
+			font-size: 30px;
+		}
+	}
+
+}
+
+
+.tp-price-title {
+	& .tp-section-title {
+		color: var(--tp-common-white);
+	}
+}
+
+.tp-section-title {
+	font-size: 59px;
+	letter-spacing: -2.5px;
+
+
+	@media #{$lg} {
+		font-size: 45px;
+	}
+	@media #{$xl} {
+		font-size: 52px;
+	}
+	@media #{$xs} {
+		font-size: 35px;
+	}
+}
+
+.tp-section-white {
+	& .tp-big-text {
+		-webkit-text-stroke: 1px #2e2e2e;
+	}
+}
+
+.tp-section-title2 {
+	color: var(--tp-common-black);
+}
+
+.z-index {
+	position: relative;
+	z-index: 9;
+}
+
+.pre{
+	position: relative;
+	&::before{
+		content: "";
+		width: 30px;
+		height: 2px;
+		background-color: var(--tp-theme-1);
+		display: inline-block;
+		margin-right: 14px;
+		transform: translateY(-4px);
+	}
+	&::after{
+		content: "";
+		width: 30px;
+		height: 2px;
+		background-color: var(--tp-theme-1);
+		display: inline-block;
+		margin-left: 14px;
+		transform: translateY(-4px);
+	}
+}
+.right{
+	position: relative;
+	&::before{
+		position: absolute;
+		content: '';
+		top: 50%;
+		transform: translateY(-50%);
+		right: -37px;
+		width: 30px;
+		height: 2px;
+		background-color: var(--tp-theme-1);
+	}
+}
+.right-white{
+	position: relative;
+	&::before{
+		position: absolute;
+		content: '';
+		top: 50%;
+		transform: translateY(-50%);
+		right: -37px;
+		width: 30px;
+		height: 2px;
+		background-color: var(--tp-common-white);
+	}
+}
+.left{
+	position:relative;
+	&::after{
+		position: absolute;
+		content: '';
+		top: 50%;
+		transform: translateY(-50%);
+		left: -37px;
+		width: 30px;
+		height: 2px;
+		background-color: var(--tp-theme-1);
+	}
+}
