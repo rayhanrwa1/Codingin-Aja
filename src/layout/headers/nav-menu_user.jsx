@@ -1,4 +1,4 @@
-import Link from "next/link.js";
+import Link from "next/link";
 import React from "react";
 import menu_data from "./menu-data_user";
 
@@ -12,7 +12,7 @@ const NavMenu = () => {
             {item.sub_menus && 
             <ul className="submenu">
               {item.sub_menus.map((sub, i) => (
-                <li key={i}>
+                <li key={`${item.id}_${i}`}>
                   <Link href={sub.link}>{sub.title}</Link>
                 </li>
               ))}

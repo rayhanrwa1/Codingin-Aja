@@ -125,6 +125,9 @@ const HeaderOne = () => {
                     <i className="fal fa-search"></i>
                     <i  className="fal fa-times"></i>                                  
                     </button>
+                    <Link className="tp-header-icon d-none d-xxl-inline-block" href="/login">
+                    <i className="fal fa-user"></i>
+                    </Link>
                     <button onClick={() => setIsOpen(true)} className="tp-menu-toggle tp-header-icon ml-20 d-xl-none">
                     <i className="far fa-bars"></i>
                     </button>

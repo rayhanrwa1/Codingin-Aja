@@ -1,4 +1,4 @@
-import Link from "next/link.js";
+import Link from "next/link"; // Ubah dari "next/link.js" menjadi "next/link"
 import React from "react";
 import menu_data from "./menu-data";
 

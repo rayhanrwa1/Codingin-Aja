@@ -1,0 +1,23 @@
+{
+    "user_id_1": {
+      "nama": "John Doe",
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "hashed_password",
+      "foto_profil": "https://drive.google.com/uc?id=YOUR_IMAGE_ID_1",
+      "umur": 30,
+      "alamat": "123 Main St",
+      "universitas_instansi": "University XYZ"
+    },
+    "user_id_2": {
+      "nama": "Jane Smith",
+      "username": "jane_smith",
+      "email": "jane@example.com",
+      "password": "hashed_password",
+      "foto_profil": "https://drive.google.com/uc?id=YOUR_IMAGE_ID_2",
+      "umur": 25,
+      "alamat": "456 Elm St",
+      "universitas_instansi": "College ABC"
+    }
+  }
+  

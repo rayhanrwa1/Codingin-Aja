@@ -1,0 +1,111 @@
+li {
+  list-style: none;
+}
+
+:root {
+  /**
+  @font family declaration
+  */
+  --tp-ff-body: 'Space Grotesk', sans-serif;
+  --tp-ff-heading: 'Space Grotesk', sans-serif;
+  --tp-ff-p: 'Space Grotesk', sans-serif;
+  --tp-ff-fontawesome: "Font Awesome 5 Pro";
+  /**
+  @color declaration
+  */
+  --tp-common-white: #ffffff;
+  --tp-common-black: #111F2C;
+  --tp-heading-primary: #111F2C;
+  --tp-grey-1: #f7f7f7;
+  --tp-grey-2: #F5F6F8;
+  --tp-text-body: #777777;
+  --tp-text-p: #777777;
+  --tp-theme-1: #111F2C;
+  --tp-border-1: #000;
+  /**
+  @font weight declaration
+  */
+  --tp-fw-normal: normal;
+  --tp-fw-elight: 200;
+  --tp-fw-light: 300;
+  --tp-fw-regular: 400;
+  --tp-fw-medium: 500;
+  --tp-fw-sbold: 600;
+  --tp-fw-bold: 700;
+  --tp-fw-ebold: 800;
+  --tp-fw-black: 900;
+  /**
+  @font size declaration
+  */
+  --tp-fz-body: 16px;
+  --tp-fz-p: 16px;
+  --tp-fz-h1: 40px;
+  --tp-fz-h2: 36px;
+  --tp-fz-h3: 24px;
+  --tp-fz-h4: 20px;
+  --tp-fz-h5: 16px;
+  --tp-fz-h6: 14px;
+}
+
+.setting-container {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.setting-container .setting-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.setting-container .setting-form .profile-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.setting-container .setting-form .profile-section .profile-image img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+.setting-container .setting-form .profile-section .profile-info h4 {
+  margin: 0;
+}
+.setting-container .setting-form .profile-section .profile-info p {
+  color: #6c757d;
+  margin: 0;
+}
+.setting-container .setting-form .password-form input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.setting-container .setting-form .password-form button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.setting-container .setting-form .error-message {
+  color: red;
+  margin-top: 5px;
+}
+.setting-container .login-message {
+  padding-top: 50px;
+  text-align: center;
+}
+.setting-container .login-message button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}

@@ -4,13 +4,25 @@ const team_data = [
         id: 1, 
         img: "/assets/img/team/Rayhan-CEO.svg",
         membar_name: "Rayhan Rizky Widi Ananta",
-        job_title: "Co-Founder & Chief Executive Officer",
+        job_title: "Founder & Chief Executive Officer",
         social_media: {
             instagram: "https://www.instagram.com/rayhan_rizky/",
             google: "https://plus.google.com/rayhan_rizky/",
             facebook: "https://www.facebook.com/rayhan_rizky/"
         },
         link: "/ceo",
+    },
+    {
+        id: 2, 
+        img: "/assets/img/team/Rahma_Fadilah-CTO.svg",
+        membar_name: "Rahmat Fadilah",
+        job_title: "Co-Founder & Chief Technology Officer",
+        social_media: {
+            instagram: "https://www.instagram.com/rayhan_rizky/",
+            google: "https://plus.google.com/rayhan_rizky/",
+            facebook: "https://www.facebook.com/rayhan_rizky/"
+        },
+        link: "/cto",
     },
     {
         id: 3, 
@@ -47,18 +59,6 @@ const team_data = [
             facebook: "https://www.facebook.com/disya_designer/"
         },
         link: "/cmo",
-    },
-    {
-        id: 2, 
-        img: "/assets/img/team/Rahma_Fadilah-CTO.svg",
-        membar_name: "Rahmat Fadilah",
-        job_title: "Chief Technology Officer",
-        social_media: {
-            instagram: "https://www.instagram.com/rayhan_rizky/",
-            google: "https://plus.google.com/rayhan_rizky/",
-            facebook: "https://www.facebook.com/rayhan_rizky/"
-        },
-        link: "/cto",
     },
 ];
 

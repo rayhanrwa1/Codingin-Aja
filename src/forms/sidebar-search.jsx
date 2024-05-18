@@ -3,7 +3,7 @@ import stringSimilarity from "string-similarity"; // Install this package using 
 
 const searchLinks = {
   "Peluncuran": "/peluncuran",
-  "Perusahaan": "/news", 
+  "Perusahaan": "/", 
   "Coding": "peluncuran", 
   "CodinginAja Resmi Diluncurkan: Platform Digital untuk Memperkuat Kemampuan Coding Anda": "/peluncuran", 
   "Tentang Kami": "/about", 
@@ -14,6 +14,31 @@ const searchLinks = {
   "Tim": "/team",
   "Pendiri": "/team",
   "Founder": "/team",
+  "Founder": "/team",
+  "Rayhan Rizky Widi Ananta": "/ceo",
+  "Han": "/ceo",
+  "Laras Suprapti": "/cdo",
+  "Laras": "/cdo",
+  "Disya Nabila Setiawan": "/cpo",
+  "Disya": "/cpo",
+  "Verra Aprilia": "/cmo",
+  "Verra": "/cmo",
+  "Rahmat Fadilah": "/cto",
+  "Rahmat   ": "/cto",
+  "ceo": "/ceo",
+  "cmo": "/cmo",
+  "cdo": "/cdo",
+  "cto": "/cto",
+  "cpo": "/cpo",
+
+  "Co-Founder & Chief Executive Officer": "/ceo",
+  "Co-Founder & Chief Data Officer": "/cdo",
+  "Chief Product Officer": "/cpo",
+  "Chief Marketing Officer": "/cmo",
+  "Chief Technology Officer": "/cto",
+
+  
+
 };
 
 const findClosestMatch = (searchTerm, searchLinks) => {

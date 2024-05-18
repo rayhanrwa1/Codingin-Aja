@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import HeaderOne from './Header_Three'; // Sesuaikan dengan path file HeaderOne
 import Sidebar from './sidebar';
-import stringSimilarity from 'string-similarity';
+import { findBestMatch } from 'string-similarity'; // Import findBestMatch from string-similarity
 
 const searchLinks = {
   "Peluncuran": "/peluncuran",
@@ -44,41 +44,43 @@ const searchLinks = {
 
 };
 
-// Function to find the closest match for the search term
-const findClosestMatch = (searchTerm, searchLinks) => {
-  const lowercaseSearchTerm = searchTerm.toLowerCase(); // Convert search term to lowercase
-  // Find the closest match among the keys in searchLinks
-  const closestMatch = Object.keys(searchLinks).reduce((closest, key) => {
-    const lowercaseKey = key.toLowerCase();
-    const similarity = stringSimilarity.compareTwoStrings(lowercaseSearchTerm, lowercaseKey);
-    return similarity > closest.similarity ? { key, similarity } : closest;
-  }, { key: "", similarity: 0 });
-
-  // Return the link corresponding to the closest match
-  return searchLinks[closestMatch.key];
-};
-
 const MyPage = () => {
   const [user, setUser] = useState(null);
-  const [userPhotoURL, setUserPhotoURL] = useState(null);
   const [isToggleSearch, setToggleSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isSubMenuOpen, setSubMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [lastActivityTime, setLastActivityTime] = useState(Date.now()); // Tambahkan state lastActivityTime
+
+  let logoutTimeout; // Timeout untuk logout
 
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
-      if (user) {
-        setUserPhotoURL(user.photoURL || '/assets/img/icon-profile-manual.svg'); // Menggunakan gambar profil default jika tidak ada foto profil
-      } else {
-        setUserPhotoURL(null);
-        console.log("Anda belum login");
-      }
+      // Set waktu aktivitas terakhir saat ada aktivitas pengguna
+      setLastActivityTime(Date.now());
+      // Reset timeout saat ada aktivitas pengguna
+      clearTimeout(logoutTimeout);
+      // Set ulang timeout
+      logoutTimeout = setTimeout(() => handleLogout(), 900000); // 900000 milidetik = 15 menit
     });
-    return () => unsubscribe();
+    return () => {
+      clearTimeout(logoutTimeout); // Pastikan timeout dihapus saat komponen dilepas
+      unsubscribe();
+    };
   }, []);
+
+  // Tambahkan efek untuk memantau waktu terakhir aktivitas
+  useEffect(() => {
+    const inactivityTimeout = setTimeout(() => {
+      const currentTime = Date.now();
+      if (currentTime - lastActivityTime >= 300000) { // 300000 milidetik = 5 menit
+        handleLogout(); // Lakukan logout jika melebihi batas waktu tanpa aktivitas
+      }
+    }, 60000); // Periksa setiap 1 menit
+    return () => clearTimeout(inactivityTimeout);
+  }, [lastActivityTime]);
 
   const handleLogout = async () => {
     try {
@@ -97,12 +99,11 @@ const MyPage = () => {
     setSearchTerm(e.target.value);
   };
 
-
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    const closestMatchLink = findClosestMatch(searchTerm, searchLinks);
+    const bestMatch = findBestMatch(searchTerm, Object.keys(searchLinks));
+    const closestMatchLink = searchLinks[bestMatch.bestMatch.target];
     if (closestMatchLink) {
-      // Gunakan Link dari Next.js untuk navigasi
       window.location.href = closestMatchLink;
     } else {
       window.location.href = `/search?keyword=${encodeURIComponent(searchTerm)}`;
@@ -115,12 +116,9 @@ const MyPage = () => {
 
   return (
     <>
-      {userPhotoURL && userPhotoURL.includes('1190x676') ? (
-        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-      ) : (
+      {user ? (
         <HeaderOne
           user={user}
-          userPhotoURL={userPhotoURL}
           handleSearchIconClick={handleSearchIconClick}
           isToggleSearch={isToggleSearch}
           handleSearchInputChange={handleSearchInputChange}
@@ -130,6 +128,8 @@ const MyPage = () => {
           isSubMenuOpen={isSubMenuOpen}
           handleLogout={handleLogout}
         />
+      ) : (
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       )}
     </>
   );

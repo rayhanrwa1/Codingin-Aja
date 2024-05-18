@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { getAuth, signInWithEmailAndPassword, sendEmailVerification, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
-import app from '../../../../firebaseConfig';
+import app from '../../../../Database/Firebase/firebaseInit';
 import { useRouter } from 'next/router';
 
 const LoginArea = () => {
@@ -30,7 +30,14 @@ const LoginArea = () => {
         event.preventDefault();
 
         if (!recaptchaToken) {
-            setErrorMessage('Silakan verifikasi reCAPTCHA.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Silakan verifikasi reCAPTCHA.',
+                footer: 'Ada masalah lain?',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#111F2C',
+            });
             return;
         }
 
@@ -38,7 +45,6 @@ const LoginArea = () => {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // Check if email is verified
             if (!user.emailVerified) {
                 await sendEmailVerification(user);
                 Swal.fire({
@@ -46,22 +52,39 @@ const LoginArea = () => {
                     title: 'Oops...',
                     text: 'Email belum diverifikasi. Silakan periksa kotak masuk Anda dan verifikasi email terlebih dahulu.',
                     footer: 'Ada masalah lain?',
-                    confirmButtonText: 'OK' // Menambahkan tombol OK
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#111F2C',
                 }).then((result) => {
-                    // Jika user menekan tombol OK
                     if (result.isConfirmed) {
-                        // Clear form fields
                         setEmail('');
                         setPassword('');
+                        router.push('/login');
                     }
                 });
             } else {
-                // Redirect ke halaman beranda jika login berhasil
                 router.push('/');
             }
         } catch (error) {
-            setErrorMessage('Email atau password salah. Silakan coba lagi.');
-            console.error('Login Error:', error);
+            let errorMessage = 'Terjadi kesalahan. Silakan coba lagi.';
+            if (error.code === 'auth/wrong-password') {
+                errorMessage = 'Password salah. Silakan coba lagi.';
+            } else if (error.code === 'auth/user-not-found') {
+                errorMessage = 'Email tidak ditemukan. Silakan coba lagi.';
+            }
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: errorMessage,
+                footer: 'Ada masalah lain?',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#111F2C',
+                showCancelButton: true,
+                cancelButtonText: 'Refresh Halaman'
+            }).then((result) => {
+                if (result.isDismissed) {
+                    window.location.reload();
+                }
+            });
         }
     };
 
@@ -69,8 +92,22 @@ const LoginArea = () => {
         const provider = new GoogleAuthProvider();
         try {
             const result = await signInWithPopup(auth, provider);
-            // Redirect ke halaman beranda setelah login berhasil
-            router.push('/');
+            const user = result.user;
+            if (user.emailVerified) {
+                router.push('/');
+            } else {
+                await sendEmailVerification(user);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Email belum diverifikasi. Silakan periksa kotak masuk Anda dan verifikasi email terlebih dahulu.',
+                    footer: 'Ada masalah lain?',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#111F2C',
+                }).then(() => {
+                    router.push('/login');
+                });
+            }
         } catch (error) {
             console.error('Google Sign-In Error', error);
         }
@@ -80,8 +117,22 @@ const LoginArea = () => {
         const provider = new GithubAuthProvider();
         try {
             const result = await signInWithPopup(auth, provider);
-            // Redirect ke halaman beranda setelah login berhasil
-            router.push('/');
+            const user = result.user;
+            if (user.emailVerified) {
+                router.push('/');
+            } else {
+                await sendEmailVerification(user);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Email belum diverifikasi. Silakan periksa kotak masuk Anda dan verifikasi email terlebih dahulu.',
+                    footer: 'Ada masalah lain?',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#111F2C',
+                }).then(() => {
+                    router.push('/login');
+                });
+            }
         } catch (error) {
             console.error('GitHub Sign-In Error', error);
         }
@@ -101,12 +152,10 @@ const LoginArea = () => {
                         </div>
                         <div className="col-xl-6 col-lg-7">
                             <div className="tp-about-info-wrapper pl-50">
-                                <div className="tp-section-box tp-section-box-2  p-relative">
-                                    <h2 className="tp-section-title mb-10">
-                                        Login
-                                    </h2>
-                                    <p style={{textAlign: 'justify'}}>   
-                                        Masuk platform kami mudah & nikmati akses penuh via Google, atau Github! <strong> Pendaftaran manual (tanpa akses penuh) hanya untuk tamu yang ingin mencoba platform ini. </strong>          
+                                <div className="tp-section-box tp-section-box-2 p-relative">
+                                    <h2 className="tp-section-title mb-10">Login</h2>
+                                    <p style={{ textAlign: 'justify' }}>
+                                        Masuk platform kami mudah & nikmati akses penuh via Google, atau Github! <strong> Pendaftaran manual (tanpa akses penuh) hanya untuk tamu yang ingin mencoba platform ini. </strong>
                                     </p>
                                 </div>
                                 <hr className="mt-5 mb-10" />

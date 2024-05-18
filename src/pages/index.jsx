@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import SEO from "../common/seo";
-import HomeOne from "../components/homes/home";
-import HomeTwo from "../components/homes/home2";
+import HeaderOne from "../components/homes/home"; // Import HeaderOne
+import HeaderTwo from "../components/homes/home2"; // Import HeaderTwo
 import Wrapper from "../layout/wrapper";
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'; // Import signOut
-import app from '../../firebaseConfig';
+import app from '../../Database/Firebase/firebaseInit';
 
 const Home = () => {
   const router = useRouter();
@@ -19,7 +19,7 @@ const Home = () => {
       clearTimeout(timer);
       timer = setTimeout(() => {
         handleLogout();
-      }, 30 * 60 * 1000); // Waktu dalam milidetik (30 menit)
+      }, 60 * 1000); // Waktu dalam milidetik (5 menit)
     };
 
     const handleLogout = async () => {
@@ -57,7 +57,7 @@ const Home = () => {
   return (
     <Wrapper>
       <SEO pageTitle={"Beranda"} />
-      {isLoggedIn ? <HomeTwo /> : <HomeOne />}
+      {isLoggedIn ? <HeaderTwo /> : <HeaderOne />}
     </Wrapper>
   );
 };

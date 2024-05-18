@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useAuth } from "../../auth"; // Sesuaikan dengan struktur direktori Anda
+import { useAuth } from "../../Database/Auth/auth"; // Sesuaikan dengan struktur direktori Anda
 
 import Wrapper from "../layout/wrapper";
 import SEO from "../common/seo";

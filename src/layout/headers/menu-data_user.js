@@ -5,39 +5,49 @@ const menu_data = [
     has_dropdown: false,
     title: "Beranda",
     link: "/",
-  },
-  {
-    id: 3,
-    mega_menu: false,
-    has_dropdown: false,
-    title: "Perusahaan",
-    link: "",
     sub_menus: [
-      { link: "/about", title: "Tentang kami" }, 
-      { link: "/careers", title: "Karier" }, 
+      { link: "/news", title: "Berita" }, 
+      { link: "/about", title: "Tentang Kami" }, 
+     
     ],
   },
   {
-    id: 5,
+    id: 2,
     mega_menu: false,
     has_dropdown: false,
     title: "Kursus",
     link: "",
+    sub_menus: [
+      { link: "/course", title: "E-Learning" }, 
+      { link: "/course-online_2", title: "Online" }, 
+      { link: "/langganan", title: "Langganan" }, 
+    ],
   }, 
   {
-    id: 5,
+    id: 3,
     mega_menu: false,
     has_dropdown: false,
     title: "Sertifikat",
     link: "",
   }, 
   {
-    id: 5,
+    id: 4,
+    mega_menu: false,
+    has_dropdown: false,
+    title: "Event",
+    link: "",
+  }, 
+  {
+    id: 4,
     mega_menu: false,
     has_dropdown: false,
     title: "Komunitas",
     link: "",
+    sub_menus: [
+      { link: "/komunitas_pengembang", title: "Pengembang" }, 
+      { link: "", title: "Kontribusi" }, 
+      { link: "", title: "Proyek" }, 
+    ],
   }, 
-  
 ];
 export default menu_data;

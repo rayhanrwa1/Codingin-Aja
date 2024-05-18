@@ -26,7 +26,7 @@ const ContactForm = () => {
                 </div>
                 <div className="col-xxl-12 col-lg-12 col-md-12">
                     <div className="contact__btn">
-                        <button className="tp-btn w-100" type="submit">Get A Quatation <i
+                        <button className="tp-btn w-100" type="submit">Dapatkan Pertanyaan <i
                             className="fal fa-long-arrow-right"></i></button>
                     </div>
                 </div>
